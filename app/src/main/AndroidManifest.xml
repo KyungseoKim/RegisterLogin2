@@ -4,6 +4,8 @@
     package="com.example.registerlogin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterLogin"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CalendarAdapter"
+        <activity android:name=".CameraActivity"></activity>
+        <activity
+            android:name=".CalendarAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".SubActivity" />
@@ -26,6 +30,19 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
+
+        <provider
+            android:authorities="com.example.registerlogin"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+
     </application>
 
 </manifest>

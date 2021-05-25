@@ -1,0 +1,1436 @@
+Index: exportToHTML/com/example/registerlogin/RegisterRequest.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/RegisterRequest.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/RegisterRequest.java.html	(date 1621897167000)
+@@ -0,0 +1,52 @@
++<html>
++<head>
++<title>RegisterRequest.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #808080; font-style: italic;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++RegisterRequest.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>com.android.volley.AuthFailureError;
++<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span>com.android.volley.Response;
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>com.android.volley.toolbox.StringRequest;
++<a name="l6"><span class="ln">6    </span></a>
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>java.util.HashMap;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>java.util.Map;
++<a name="l9"><span class="ln">9    </span></a>
++<a name="l10"><span class="ln">10   </span></a><span class="s0">public class </span>RegisterRequest <span class="s0">extends </span>StringRequest {
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a>    <span class="s2">//서버 URL 설정</span>
++<a name="l13"><span class="ln">13   </span></a>    <span class="s0">final static private </span>String URL = <span class="s3">&quot;http://sieun1025.dothome.co.kr/Register.php&quot;</span>;
++<a name="l14"><span class="ln">14   </span></a>    <span class="s0">private </span>Map&lt;String, String&gt; map;
++<a name="l15"><span class="ln">15   </span></a>
++<a name="l16"><span class="ln">16   </span></a>
++<a name="l17"><span class="ln">17   </span></a>    <span class="s0">public </span>RegisterRequest(String userID, String userPassword, String userName, <span class="s0">int </span>userAge, Response.Listener&lt;String&gt; listener) {
++<a name="l18"><span class="ln">18   </span></a>        <span class="s0">super</span>(Method.POST, URL, listener,<span class="s0">null</span>);
++<a name="l19"><span class="ln">19   </span></a>
++<a name="l20"><span class="ln">20   </span></a>        map = <span class="s0">new </span>HashMap&lt;&gt;();
++<a name="l21"><span class="ln">21   </span></a>        map.put(<span class="s3">&quot;userID&quot;</span>,userID);
++<a name="l22"><span class="ln">22   </span></a>        map.put(<span class="s3">&quot;userPassword&quot;</span>, userPassword);
++<a name="l23"><span class="ln">23   </span></a>        map.put(<span class="s3">&quot;userName&quot;</span>, userName);
++<a name="l24"><span class="ln">24   </span></a>        map.put(<span class="s3">&quot;userAge&quot;</span>, userAge + <span class="s3">&quot;&quot;</span>);
++<a name="l25"><span class="ln">25   </span></a>    }
++<a name="l26"><span class="ln">26   </span></a>
++<a name="l27"><span class="ln">27   </span></a>    @Override
++<a name="l28"><span class="ln">28   </span></a>    <span class="s0">protected </span>Map&lt;String, String&gt; getParams() <span class="s0">throws </span>AuthFailureError {
++<a name="l29"><span class="ln">29   </span></a>        <span class="s0">return </span>map;
++<a name="l30"><span class="ln">30   </span></a>    }
++<a name="l31"><span class="ln">31   </span></a>}
++<a name="l32"><span class="ln">32   </span></a></pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/CalendarActivity.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/CalendarActivity.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/CalendarActivity.java.html	(date 1621897167000)
+@@ -0,0 +1,131 @@
++<html>
++<head>
++<title>CalendarActivity.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #0000ff;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++CalendarActivity.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>android.os.Build;
++<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>android.view.View;
++<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span>android.widget.TextView;
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>android.widget.Toast;
++<a name="l8"><span class="ln">8    </span></a>
++<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span>androidx.annotation.RequiresApi;
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l11"><span class="ln">11   </span></a><span class="s0">import </span>androidx.recyclerview.widget.GridLayoutManager;
++<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span>androidx.recyclerview.widget.RecyclerView;
++<a name="l13"><span class="ln">13   </span></a>
++<a name="l14"><span class="ln">14   </span></a><span class="s0">import </span>java.time.LocalDate;
++<a name="l15"><span class="ln">15   </span></a><span class="s0">import </span>java.time.YearMonth;
++<a name="l16"><span class="ln">16   </span></a><span class="s0">import </span>java.time.format.DateTimeFormatter;
++<a name="l17"><span class="ln">17   </span></a><span class="s0">import </span>java.util.ArrayList;
++<a name="l18"><span class="ln">18   </span></a>
++<a name="l19"><span class="ln">19   </span></a><span class="s0">public class </span>CalendarActivity <span class="s0">extends </span>AppCompatActivity <span class="s0">implements <a href="CalendarAdapter.java.html">CalendarAdapter.OnItemListener</a></span>
++<a name="l20"><span class="ln">20   </span></a>{
++<a name="l21"><span class="ln">21   </span></a>    <span class="s0">private </span>TextView monthYearText;
++<a name="l22"><span class="ln">22   </span></a>    <span class="s0">private </span>RecyclerView calendarRecyclerView;
++<a name="l23"><span class="ln">23   </span></a>    <span class="s0">private </span>LocalDate selectedDate;
++<a name="l24"><span class="ln">24   </span></a>
++<a name="l25"><span class="ln">25   </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l26"><span class="ln">26   </span></a>    @Override
++<a name="l27"><span class="ln">27   </span></a>    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState)
++<a name="l28"><span class="ln">28   </span></a>    {
++<a name="l29"><span class="ln">29   </span></a>        <span class="s0">super</span>.onCreate(savedInstanceState);
++<a name="l30"><span class="ln">30   </span></a>        setContentView(R.layout.activity_calendar);
++<a name="l31"><span class="ln">31   </span></a>        initwidgets();
++<a name="l32"><span class="ln">32   </span></a>        selectedDate = LocalDate.now();
++<a name="l33"><span class="ln">33   </span></a>        setMonthView();
++<a name="l34"><span class="ln">34   </span></a>    }
++<a name="l35"><span class="ln">35   </span></a>
++<a name="l36"><span class="ln">36   </span></a>    <span class="s0">private void </span>initwidgets()
++<a name="l37"><span class="ln">37   </span></a>    {
++<a name="l38"><span class="ln">38   </span></a>        calendarRecyclerView = findViewById((R.id.calendarRecyclerView));
++<a name="l39"><span class="ln">39   </span></a>        monthYearText = findViewById(R.id.monthYearTV);
++<a name="l40"><span class="ln">40   </span></a>    }
++<a name="l41"><span class="ln">41   </span></a>
++<a name="l42"><span class="ln">42   </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l43"><span class="ln">43   </span></a>    <span class="s0">private void </span>setMonthView()
++<a name="l44"><span class="ln">44   </span></a>    {
++<a name="l45"><span class="ln">45   </span></a>        monthYearText.setText(monthYearFromDate(selectedDate));
++<a name="l46"><span class="ln">46   </span></a>        ArrayList&lt;String&gt; daysInMonth = daysInMonthArray(selectedDate);
++<a name="l47"><span class="ln">47   </span></a>
++<a name="l48"><span class="ln">48   </span></a>        <a href="CalendarAdapter.java.html">CalendarAdapter</a> calendarAdapter = <span class="s0">new <a href="CalendarAdapter.java.html">CalendarAdapter</a></span>(daysInMonth, <span class="s0">this</span>);
++<a name="l49"><span class="ln">49   </span></a>        RecyclerView.LayoutManager layoutManager = <span class="s0">new </span>GridLayoutManager(getApplicationContext(), <span class="s2">7</span>);
++<a name="l50"><span class="ln">50   </span></a>        calendarRecyclerView.setLayoutManager(layoutManager);
++<a name="l51"><span class="ln">51   </span></a>        calendarRecyclerView.setAdapter(calendarAdapter);
++<a name="l52"><span class="ln">52   </span></a>    }
++<a name="l53"><span class="ln">53   </span></a>
++<a name="l54"><span class="ln">54   </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l55"><span class="ln">55   </span></a>    <span class="s0">private </span>ArrayList&lt;String&gt; daysInMonthArray(LocalDate date)
++<a name="l56"><span class="ln">56   </span></a>    {
++<a name="l57"><span class="ln">57   </span></a>        ArrayList&lt;String&gt; daysInMonthArray = <span class="s0">new </span>ArrayList&lt;&gt;();
++<a name="l58"><span class="ln">58   </span></a>        YearMonth yearMonth = YearMonth.from(date);
++<a name="l59"><span class="ln">59   </span></a>
++<a name="l60"><span class="ln">60   </span></a>
++<a name="l61"><span class="ln">61   </span></a>        <span class="s0">int </span>daysInMonth = yearMonth.lengthOfMonth();
++<a name="l62"><span class="ln">62   </span></a>
++<a name="l63"><span class="ln">63   </span></a>        LocalDate firstOfMonth = selectedDate.withDayOfMonth(<span class="s2">1</span>);
++<a name="l64"><span class="ln">64   </span></a>        <span class="s0">int </span>dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
++<a name="l65"><span class="ln">65   </span></a>
++<a name="l66"><span class="ln">66   </span></a>        <span class="s0">for</span>(<span class="s0">int </span>i = <span class="s2">1</span>; i &lt;= <span class="s2">42</span>; i++)
++<a name="l67"><span class="ln">67   </span></a>        {
++<a name="l68"><span class="ln">68   </span></a>            <span class="s0">if</span>(i &lt;= dayOfWeek || i &gt; daysInMonth + dayOfWeek)
++<a name="l69"><span class="ln">69   </span></a>            {
++<a name="l70"><span class="ln">70   </span></a>                daysInMonthArray.add(<span class="s3">&quot;&quot;</span>);
++<a name="l71"><span class="ln">71   </span></a>            }
++<a name="l72"><span class="ln">72   </span></a>            <span class="s0">else</span>
++<a name="l73"><span class="ln">73   </span></a>                {
++<a name="l74"><span class="ln">74   </span></a>                    daysInMonthArray.add(String.valueOf(i - dayOfWeek));
++<a name="l75"><span class="ln">75   </span></a>                }
++<a name="l76"><span class="ln">76   </span></a>        }
++<a name="l77"><span class="ln">77   </span></a>        <span class="s0">return </span>daysInMonthArray;
++<a name="l78"><span class="ln">78   </span></a>    }
++<a name="l79"><span class="ln">79   </span></a>
++<a name="l80"><span class="ln">80   </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l81"><span class="ln">81   </span></a>    <span class="s0">private </span>String monthYearFromDate(LocalDate date)
++<a name="l82"><span class="ln">82   </span></a>    {
++<a name="l83"><span class="ln">83   </span></a>        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(<span class="s3">&quot;MMMM yyyy&quot;</span>);
++<a name="l84"><span class="ln">84   </span></a>        <span class="s0">return </span>date.format(formatter);
++<a name="l85"><span class="ln">85   </span></a>    }
++<a name="l86"><span class="ln">86   </span></a>
++<a name="l87"><span class="ln">87   </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l88"><span class="ln">88   </span></a>    <span class="s0">public void </span>previousMonthAction(View view)
++<a name="l89"><span class="ln">89   </span></a>    {
++<a name="l90"><span class="ln">90   </span></a>        selectedDate = selectedDate.minusMonths(<span class="s2">1</span>);
++<a name="l91"><span class="ln">91   </span></a>        setMonthView();
++<a name="l92"><span class="ln">92   </span></a>    }
++<a name="l93"><span class="ln">93   </span></a>
++<a name="l94"><span class="ln">94   </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l95"><span class="ln">95   </span></a>    <span class="s0">public void </span>nextMonthAction(View view)
++<a name="l96"><span class="ln">96   </span></a>    {
++<a name="l97"><span class="ln">97   </span></a>        selectedDate = selectedDate.plusMonths(<span class="s2">1</span>);
++<a name="l98"><span class="ln">98   </span></a>        setMonthView();
++<a name="l99"><span class="ln">99   </span></a>    }
++<a name="l100"><span class="ln">100  </span></a>
++<a name="l101"><span class="ln">101  </span></a>    @RequiresApi(api = Build.VERSION_CODES.O)
++<a name="l102"><span class="ln">102  </span></a>    @Override
++<a name="l103"><span class="ln">103  </span></a>    <span class="s0">public void </span>onItemClick(<span class="s0">int </span>position, String dayText)
++<a name="l104"><span class="ln">104  </span></a>    {
++<a name="l105"><span class="ln">105  </span></a>        <span class="s0">if</span>(dayText.equals(<span class="s3">&quot;&quot;</span>))
++<a name="l106"><span class="ln">106  </span></a>        {
++<a name="l107"><span class="ln">107  </span></a>            String message = <span class="s3">&quot;Selected Date&quot; </span>+ dayText + <span class="s3">&quot; &quot; </span>+ monthYearFromDate(selectedDate);
++<a name="l108"><span class="ln">108  </span></a>            Toast.makeText(<span class="s0">this</span>, message, Toast.LENGTH_LONG).show();
++<a name="l109"><span class="ln">109  </span></a>        }
++<a name="l110"><span class="ln">110  </span></a>    }
++<a name="l111"><span class="ln">111  </span></a>}</pre>
++</body>
++</html>
+\ No newline at end of file
+Index: app/src/main/res/layout/camera.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/camera.xml	(date 1621896884000)
++++ app/src/main/res/layout/camera.xml	(date 1621896884000)
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context=".CameraActivity">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_weight="1">
++
++        <ImageView
++            android:id="@+id/iv_result"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent" />
++
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:gravity="center"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btn_capture"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="촬영" />
++
++    </LinearLayout>
++
++
++</LinearLayout>
+Index: exportToHTML/com/example/registerlogin/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/index.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/index.html	(date 1621897167000)
+@@ -0,0 +1,1 @@
++<html><head><title>com.example.registerlogin</title></head><body><a href="SubActivity.java.html">SubActivity.java</a><br /><a href="LoginRequest.java.html">LoginRequest.java</a><br /><a href="MainActivity.java.html">MainActivity.java</a><br /><a href="LoginActivity.java.html">LoginActivity.java</a><br /><a href="CameraActivity.java.html">CameraActivity.java</a><br /><a href="CalendarAdapter.java.html">CalendarAdapter.java</a><br /><a href="RegisterRequest.java.html">RegisterRequest.java</a><br /><a href="CalendarActivity.java.html">CalendarActivity.java</a><br /><a href="RegisterActivity.java.html">RegisterActivity.java</a><br /><a href="CalendarViewHolder.java.html">CalendarViewHolder.java</a><br /></body></html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/LoginActivity.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/LoginActivity.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/LoginActivity.java.html	(date 1621897167000)
+@@ -0,0 +1,100 @@
++<html>
++<head>
++<title>LoginActivity.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #808080; font-style: italic;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++LoginActivity.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l4"><span class="ln">4    </span></a>
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>android.content.Intent;
++<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>android.view.View;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>android.widget.Button;
++<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span>android.widget.EditText;
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>android.widget.Toast;
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span>com.android.volley.RequestQueue;
++<a name="l13"><span class="ln">13   </span></a><span class="s0">import </span>com.android.volley.Response;
++<a name="l14"><span class="ln">14   </span></a><span class="s0">import </span>com.android.volley.toolbox.Volley;
++<a name="l15"><span class="ln">15   </span></a>
++<a name="l16"><span class="ln">16   </span></a><span class="s0">import </span>org.json.JSONException;
++<a name="l17"><span class="ln">17   </span></a><span class="s0">import </span>org.json.JSONObject;
++<a name="l18"><span class="ln">18   </span></a>
++<a name="l19"><span class="ln">19   </span></a><span class="s0">public class </span>LoginActivity <span class="s0">extends </span>AppCompatActivity {
++<a name="l20"><span class="ln">20   </span></a>    <span class="s0">private </span>EditText et_id, et_pass;
++<a name="l21"><span class="ln">21   </span></a>    <span class="s0">private </span>Button btn_login, btn_register;
++<a name="l22"><span class="ln">22   </span></a>
++<a name="l23"><span class="ln">23   </span></a>    @Override
++<a name="l24"><span class="ln">24   </span></a>    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState) {
++<a name="l25"><span class="ln">25   </span></a>        <span class="s0">super</span>.onCreate(savedInstanceState);
++<a name="l26"><span class="ln">26   </span></a>        setContentView(R.layout.activity_login);
++<a name="l27"><span class="ln">27   </span></a>
++<a name="l28"><span class="ln">28   </span></a>        et_id = findViewById(R.id.et_id);
++<a name="l29"><span class="ln">29   </span></a>        et_pass = findViewById(R.id.et_pass);
++<a name="l30"><span class="ln">30   </span></a>        btn_login = findViewById(R.id.btn_login);
++<a name="l31"><span class="ln">31   </span></a>        btn_register = findViewById(R.id.btn_register);
++<a name="l32"><span class="ln">32   </span></a>
++<a name="l33"><span class="ln">33   </span></a>        <span class="s2">//회원가입 버튼 클릭시 수행</span>
++<a name="l34"><span class="ln">34   </span></a>        btn_register.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
++<a name="l35"><span class="ln">35   </span></a>            @Override
++<a name="l36"><span class="ln">36   </span></a>            <span class="s0">public void </span>onClick(View view) {
++<a name="l37"><span class="ln">37   </span></a>                Intent intent = <span class="s0">new </span>Intent(LoginActivity.<span class="s0">this</span>, <a href="RegisterActivity.java.html">RegisterActivity</a>.<span class="s0">class</span>);
++<a name="l38"><span class="ln">38   </span></a>                startActivity(intent);
++<a name="l39"><span class="ln">39   </span></a>            }
++<a name="l40"><span class="ln">40   </span></a>        });
++<a name="l41"><span class="ln">41   </span></a>
++<a name="l42"><span class="ln">42   </span></a>        btn_login.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
++<a name="l43"><span class="ln">43   </span></a>            @Override
++<a name="l44"><span class="ln">44   </span></a>            <span class="s0">public void </span>onClick(View v) {
++<a name="l45"><span class="ln">45   </span></a>                <span class="s2">//EditText에 현재 입력되어있는 값을 가져오기</span>
++<a name="l46"><span class="ln">46   </span></a>                String userID = et_id.getText().toString();
++<a name="l47"><span class="ln">47   </span></a>                String userPass = et_pass.getText().toString();
++<a name="l48"><span class="ln">48   </span></a>
++<a name="l49"><span class="ln">49   </span></a>                Response.Listener&lt;String&gt; responseListener = <span class="s0">new </span>Response.Listener&lt;String&gt;() {
++<a name="l50"><span class="ln">50   </span></a>                    @Override
++<a name="l51"><span class="ln">51   </span></a>                    <span class="s0">public void </span>onResponse(String response) {
++<a name="l52"><span class="ln">52   </span></a>                        <span class="s0">try </span>{
++<a name="l53"><span class="ln">53   </span></a>                            JSONObject jsonObject = <span class="s0">new </span>JSONObject(response);
++<a name="l54"><span class="ln">54   </span></a>                            <span class="s0">boolean </span>success = jsonObject.getBoolean(<span class="s3">&quot;success&quot;</span>);
++<a name="l55"><span class="ln">55   </span></a>                            <span class="s0">if </span>(success) { <span class="s2">//로그인에 성공한 경우</span>
++<a name="l56"><span class="ln">56   </span></a>                                String userID = jsonObject.getString(<span class="s3">&quot;userID&quot;</span>);
++<a name="l57"><span class="ln">57   </span></a>                                String userPass = jsonObject.getString(<span class="s3">&quot;userPassword&quot;</span>);
++<a name="l58"><span class="ln">58   </span></a>                                Toast.makeText(getApplicationContext(), <span class="s3">&quot;로그인에 성공하였습니다.&quot;</span>, Toast.LENGTH_SHORT
++<a name="l59"><span class="ln">59   </span></a>                                ).show();
++<a name="l60"><span class="ln">60   </span></a>                                Intent intent = <span class="s0">new </span>Intent(LoginActivity.<span class="s0">this</span>, <a href="MainActivity.java.html">MainActivity</a>.<span class="s0">class</span>);
++<a name="l61"><span class="ln">61   </span></a>                                intent.putExtra(<span class="s3">&quot;userID&quot;</span>, userID);
++<a name="l62"><span class="ln">62   </span></a>                                intent.putExtra(<span class="s3">&quot;userPass&quot;</span>, userPass);
++<a name="l63"><span class="ln">63   </span></a>                                startActivity(intent);
++<a name="l64"><span class="ln">64   </span></a>                            }  <span class="s0">else </span>{ <span class="s2">//로그인에 실패한 경우</span>
++<a name="l65"><span class="ln">65   </span></a>                                Toast.makeText(getApplicationContext(), <span class="s3">&quot;로그인에 실패하였습니다.&quot;</span>, Toast.LENGTH_SHORT
++<a name="l66"><span class="ln">66   </span></a>                                ).show();
++<a name="l67"><span class="ln">67   </span></a>                                <span class="s0">return</span>;
++<a name="l68"><span class="ln">68   </span></a>                            }
++<a name="l69"><span class="ln">69   </span></a>                        } <span class="s0">catch </span>(JSONException e) {
++<a name="l70"><span class="ln">70   </span></a>                            e.printStackTrace();
++<a name="l71"><span class="ln">71   </span></a>                        }
++<a name="l72"><span class="ln">72   </span></a>                    }
++<a name="l73"><span class="ln">73   </span></a>                };
++<a name="l74"><span class="ln">74   </span></a>                <a href="LoginRequest.java.html">LoginRequest</a> loginRequest = <span class="s0">new <a href="LoginRequest.java.html">LoginRequest</a></span>(userID, userPass, responseListener);
++<a name="l75"><span class="ln">75   </span></a>                RequestQueue queue = Volley.newRequestQueue(LoginActivity.<span class="s0">this</span>);
++<a name="l76"><span class="ln">76   </span></a>                queue.add(loginRequest);
++<a name="l77"><span class="ln">77   </span></a>            }
++<a name="l78"><span class="ln">78   </span></a>        });
++<a name="l79"><span class="ln">79   </span></a>    }
++<a name="l80"><span class="ln">80   </span></a>}</pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/SubActivity.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/SubActivity.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/SubActivity.java.html	(date 1621897167000)
+@@ -0,0 +1,70 @@
++<html>
++<head>
++<title>SubActivity.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #808080; font-style: italic;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++SubActivity.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l4"><span class="ln">4    </span></a>
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>android.app.Activity;
++<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span>android.content.Intent;
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>android.net.Uri;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span>android.view.View;
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>android.widget.Button;
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span>java.util.Calendar;
++<a name="l13"><span class="ln">13   </span></a>
++<a name="l14"><span class="ln">14   </span></a><span class="s0">public class </span>SubActivity <span class="s0">extends </span>AppCompatActivity {
++<a name="l15"><span class="ln">15   </span></a>
++<a name="l16"><span class="ln">16   </span></a>    <span class="s2">//버튼 선언</span>
++<a name="l17"><span class="ln">17   </span></a>    <span class="s0">private </span>Button btn_move2;
++<a name="l18"><span class="ln">18   </span></a>    <span class="s0">private </span>Button btn_move3;
++<a name="l19"><span class="ln">19   </span></a>
++<a name="l20"><span class="ln">20   </span></a>
++<a name="l21"><span class="ln">21   </span></a>    @Override
++<a name="l22"><span class="ln">22   </span></a>    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState) {
++<a name="l23"><span class="ln">23   </span></a>        <span class="s0">super</span>.onCreate(savedInstanceState);
++<a name="l24"><span class="ln">24   </span></a>        setContentView(R.layout.activity_sub);
++<a name="l25"><span class="ln">25   </span></a>
++<a name="l26"><span class="ln">26   </span></a>        btn_move3 = findViewById(R.id.btn_move3);
++<a name="l27"><span class="ln">27   </span></a>        btn_move3.setOnClickListener((<span class="s0">new </span>View.OnClickListener() {
++<a name="l28"><span class="ln">28   </span></a>            @Override
++<a name="l29"><span class="ln">29   </span></a>            <span class="s0">public void </span>onClick(View v) {
++<a name="l30"><span class="ln">30   </span></a>                Intent intent = <span class="s0">new </span>Intent(SubActivity.<span class="s0">this</span>, <a href="CameraActivity.java.html">CameraActivity</a>.<span class="s0">class</span>);
++<a name="l31"><span class="ln">31   </span></a>                startActivity(intent);
++<a name="l32"><span class="ln">32   </span></a>            }
++<a name="l33"><span class="ln">33   </span></a>        }));
++<a name="l34"><span class="ln">34   </span></a>
++<a name="l35"><span class="ln">35   </span></a>        btn_move2 = findViewById(R.id.btn_move2);
++<a name="l36"><span class="ln">36   </span></a>        btn_move2.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
++<a name="l37"><span class="ln">37   </span></a>            @Override
++<a name="l38"><span class="ln">38   </span></a>            <span class="s0">public void </span>onClick(View v) {
++<a name="l39"><span class="ln">39   </span></a>                Intent intent = <span class="s0">new </span>Intent(SubActivity.<span class="s0">this </span>, <a href="CalendarActivity.java.html">CalendarActivity</a>.<span class="s0">class</span>);
++<a name="l40"><span class="ln">40   </span></a>                startActivity(intent); <span class="s2">//액티비티 이동</span>
++<a name="l41"><span class="ln">41   </span></a>            }
++<a name="l42"><span class="ln">42   </span></a>
++<a name="l43"><span class="ln">43   </span></a>        });
++<a name="l44"><span class="ln">44   </span></a>
++<a name="l45"><span class="ln">45   </span></a>    }
++<a name="l46"><span class="ln">46   </span></a>    <span class="s0">public void </span>buttonCLick(View v){
++<a name="l47"><span class="ln">47   </span></a>        Intent i = <span class="s0">new </span>Intent(Intent.ACTION_VIEW, Uri.parse(<span class="s3">&quot;https://www.melon.com/&quot;</span>));
++<a name="l48"><span class="ln">48   </span></a>        startActivity(i);
++<a name="l49"><span class="ln">49   </span></a>    }
++<a name="l50"><span class="ln">50   </span></a>}</pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/CalendarAdapter.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/CalendarAdapter.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/CalendarAdapter.java.html	(date 1621897167000)
+@@ -0,0 +1,72 @@
++<html>
++<head>
++<title>CalendarAdapter.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #0000ff;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++CalendarAdapter.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>android.view.LayoutInflater;
++<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span>android.view.View;
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>android.view.ViewGroup;
++<a name="l6"><span class="ln">6    </span></a>
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>androidx.annotation.NonNull;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>androidx.recyclerview.widget.RecyclerView;
++<a name="l9"><span class="ln">9    </span></a>
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>com.example.registerlogin.R;
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span>java.util.ArrayList;
++<a name="l13"><span class="ln">13   </span></a>
++<a name="l14"><span class="ln">14   </span></a><span class="s0">public class </span>CalendarAdapter <span class="s0">extends </span>RecyclerView.Adapter&lt;com.example.registerlogin.CalendarViewHolder&gt;
++<a name="l15"><span class="ln">15   </span></a>{
++<a name="l16"><span class="ln">16   </span></a>    <span class="s0">private final </span>ArrayList&lt;String&gt; daysOfMonth;
++<a name="l17"><span class="ln">17   </span></a>    <span class="s0">private final </span>OnItemListener OnItemListener;
++<a name="l18"><span class="ln">18   </span></a>
++<a name="l19"><span class="ln">19   </span></a>    <span class="s0">public </span>CalendarAdapter(ArrayList&lt;String&gt; daysOfMonth, CalendarAdapter.OnItemListener onItemListener)
++<a name="l20"><span class="ln">20   </span></a>    {
++<a name="l21"><span class="ln">21   </span></a>        <span class="s0">this</span>.daysOfMonth = daysOfMonth;
++<a name="l22"><span class="ln">22   </span></a>        OnItemListener = onItemListener;
++<a name="l23"><span class="ln">23   </span></a>    }
++<a name="l24"><span class="ln">24   </span></a>
++<a name="l25"><span class="ln">25   </span></a>    @NonNull
++<a name="l26"><span class="ln">26   </span></a>    @Override
++<a name="l27"><span class="ln">27   </span></a>    <span class="s0">public <a href="CalendarViewHolder.java.html">com.example.registerlogin.CalendarViewHolder</a> </span>onCreateViewHolder(@NonNull ViewGroup parent, <span class="s0">int </span>viewType)
++<a name="l28"><span class="ln">28   </span></a>    {
++<a name="l29"><span class="ln">29   </span></a>        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
++<a name="l30"><span class="ln">30   </span></a>        View view = inflater.inflate(R.layout.calendar_cell, parent, <span class="s0">false</span>);
++<a name="l31"><span class="ln">31   </span></a>        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
++<a name="l32"><span class="ln">32   </span></a>        layoutParams.height = (<span class="s0">int</span>) (parent.getHeight() * <span class="s2">0.16666666</span>);
++<a name="l33"><span class="ln">33   </span></a>        <span class="s0">return new <a href="CalendarViewHolder.java.html">com.example.registerlogin.CalendarViewHolder</a></span>(view, OnItemListener);
++<a name="l34"><span class="ln">34   </span></a>    }
++<a name="l35"><span class="ln">35   </span></a>
++<a name="l36"><span class="ln">36   </span></a>    @Override
++<a name="l37"><span class="ln">37   </span></a>    <span class="s0">public void </span>onBindViewHolder(@NonNull <a href="CalendarViewHolder.java.html">com.example.registerlogin.CalendarViewHolder</a> holder, <span class="s0">int </span>position)
++<a name="l38"><span class="ln">38   </span></a>    {
++<a name="l39"><span class="ln">39   </span></a>        holder.dayOfMonth.setText(daysOfMonth.get(position));
++<a name="l40"><span class="ln">40   </span></a>    }
++<a name="l41"><span class="ln">41   </span></a>
++<a name="l42"><span class="ln">42   </span></a>    @Override
++<a name="l43"><span class="ln">43   </span></a>    <span class="s0">public int </span>getItemCount()
++<a name="l44"><span class="ln">44   </span></a>    {
++<a name="l45"><span class="ln">45   </span></a>        <span class="s0">return </span>daysOfMonth.size();
++<a name="l46"><span class="ln">46   </span></a>    }
++<a name="l47"><span class="ln">47   </span></a>
++<a name="l48"><span class="ln">48   </span></a>    <span class="s0">public interface </span>OnItemListener
++<a name="l49"><span class="ln">49   </span></a>    {
++<a name="l50"><span class="ln">50   </span></a>        <span class="s0">void </span>onItemClick(<span class="s0">int </span>position, String dayText);
++<a name="l51"><span class="ln">51   </span></a>    }
++<a name="l52"><span class="ln">52   </span></a>}
++<a name="l53"><span class="ln">53   </span></a></pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/RegisterActivity.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/RegisterActivity.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/RegisterActivity.java.html	(date 1621897167000)
+@@ -0,0 +1,96 @@
++<html>
++<head>
++<title>RegisterActivity.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #808080; font-style: italic;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++RegisterActivity.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l4"><span class="ln">4    </span></a>
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>android.content.Intent;
++<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>android.view.View;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>android.widget.Button;
++<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span>android.widget.EditText;
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>android.widget.Toast;
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span>com.android.volley.RequestQueue;
++<a name="l13"><span class="ln">13   </span></a><span class="s0">import </span>com.android.volley.Response;
++<a name="l14"><span class="ln">14   </span></a><span class="s0">import </span>com.android.volley.toolbox.Volley;
++<a name="l15"><span class="ln">15   </span></a>
++<a name="l16"><span class="ln">16   </span></a><span class="s0">import </span>org.json.JSONException;
++<a name="l17"><span class="ln">17   </span></a><span class="s0">import </span>org.json.JSONObject;
++<a name="l18"><span class="ln">18   </span></a>
++<a name="l19"><span class="ln">19   </span></a><span class="s0">public class </span>RegisterActivity <span class="s0">extends </span>AppCompatActivity {
++<a name="l20"><span class="ln">20   </span></a>
++<a name="l21"><span class="ln">21   </span></a>    <span class="s0">private </span>EditText et_id, et_pass, et_name, et_age;
++<a name="l22"><span class="ln">22   </span></a>    <span class="s0">private </span>Button btn_register;
++<a name="l23"><span class="ln">23   </span></a>
++<a name="l24"><span class="ln">24   </span></a>    @Override
++<a name="l25"><span class="ln">25   </span></a>    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState) { <span class="s2">//액티비티 시작시 처음으로 실행</span>
++<a name="l26"><span class="ln">26   </span></a>        <span class="s0">super</span>.onCreate(savedInstanceState);
++<a name="l27"><span class="ln">27   </span></a>        setContentView(R.layout.activity_register);
++<a name="l28"><span class="ln">28   </span></a>
++<a name="l29"><span class="ln">29   </span></a>        <span class="s2">//아이디 값 찾아주기</span>
++<a name="l30"><span class="ln">30   </span></a>        et_id = findViewById((R.id.et_id));
++<a name="l31"><span class="ln">31   </span></a>        et_pass = findViewById((R.id.et_pass));
++<a name="l32"><span class="ln">32   </span></a>        et_name = findViewById((R.id.et_name));
++<a name="l33"><span class="ln">33   </span></a>        et_age = findViewById((R.id.et_age));
++<a name="l34"><span class="ln">34   </span></a>
++<a name="l35"><span class="ln">35   </span></a>        <span class="s2">//회원가입 버튼 클릭 시 수행</span>
++<a name="l36"><span class="ln">36   </span></a>        btn_register = findViewById((R.id.btn_register));
++<a name="l37"><span class="ln">37   </span></a>        btn_register.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
++<a name="l38"><span class="ln">38   </span></a>            @Override
++<a name="l39"><span class="ln">39   </span></a>            <span class="s0">public void </span>onClick(View v) {
++<a name="l40"><span class="ln">40   </span></a>                <span class="s2">//EditText에 현재 입력되어있는 값을 가져오기</span>
++<a name="l41"><span class="ln">41   </span></a>                String userID = et_id.getText().toString();
++<a name="l42"><span class="ln">42   </span></a>                String userPass = et_pass.getText().toString();
++<a name="l43"><span class="ln">43   </span></a>                String userName = et_name.getText().toString();
++<a name="l44"><span class="ln">44   </span></a>                <span class="s0">int </span>userAge = Integer.parseInt(et_age.getText().toString());
++<a name="l45"><span class="ln">45   </span></a>
++<a name="l46"><span class="ln">46   </span></a>                Response.Listener&lt;String&gt; responseListener = <span class="s0">new </span>Response.Listener&lt;String&gt;() {
++<a name="l47"><span class="ln">47   </span></a>                    @Override
++<a name="l48"><span class="ln">48   </span></a>                    <span class="s0">public void </span>onResponse(String response) {
++<a name="l49"><span class="ln">49   </span></a>                        <span class="s0">try </span>{
++<a name="l50"><span class="ln">50   </span></a>                            JSONObject jsonObject = <span class="s0">new </span>JSONObject(response);
++<a name="l51"><span class="ln">51   </span></a>                            <span class="s0">boolean </span>success = jsonObject.getBoolean(<span class="s3">&quot;success&quot;</span>);
++<a name="l52"><span class="ln">52   </span></a>                            <span class="s0">if </span>(success) { <span class="s2">//회원 등록에 성공한 경우</span>
++<a name="l53"><span class="ln">53   </span></a>                                Toast.makeText(getApplicationContext(), <span class="s3">&quot;회원 등록에 성공하였습니다.&quot;</span>, Toast.LENGTH_SHORT
++<a name="l54"><span class="ln">54   </span></a>                                ).show();
++<a name="l55"><span class="ln">55   </span></a>                                Intent intent = <span class="s0">new </span>Intent(RegisterActivity.<span class="s0">this</span>, <a href="LoginActivity.java.html">LoginActivity</a>.<span class="s0">class</span>);
++<a name="l56"><span class="ln">56   </span></a>                                startActivity(intent);
++<a name="l57"><span class="ln">57   </span></a>                            } <span class="s0">else </span>{ <span class="s2">//회원 등록에 실패한 경우</span>
++<a name="l58"><span class="ln">58   </span></a>                                Toast.makeText(getApplicationContext(), <span class="s3">&quot;회원 등록에 실패하였습니다.&quot;</span>, Toast.LENGTH_SHORT
++<a name="l59"><span class="ln">59   </span></a>                                ).show();
++<a name="l60"><span class="ln">60   </span></a>                                <span class="s0">return</span>;
++<a name="l61"><span class="ln">61   </span></a>                            }
++<a name="l62"><span class="ln">62   </span></a>                        } <span class="s0">catch </span>(JSONException e) {
++<a name="l63"><span class="ln">63   </span></a>                            e.printStackTrace();
++<a name="l64"><span class="ln">64   </span></a>                        }
++<a name="l65"><span class="ln">65   </span></a>
++<a name="l66"><span class="ln">66   </span></a>                    }
++<a name="l67"><span class="ln">67   </span></a>                };
++<a name="l68"><span class="ln">68   </span></a>                <span class="s2">//서버로 Volley 이용해서 요청을 함</span>
++<a name="l69"><span class="ln">69   </span></a>                <a href="RegisterRequest.java.html">RegisterRequest</a> registerRequest = <span class="s0">new <a href="RegisterRequest.java.html">RegisterRequest</a></span>(userID, userPass, userName, userAge, responseListener);
++<a name="l70"><span class="ln">70   </span></a>                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.<span class="s0">this</span>);
++<a name="l71"><span class="ln">71   </span></a>                queue.add(registerRequest);
++<a name="l72"><span class="ln">72   </span></a>
++<a name="l73"><span class="ln">73   </span></a>            }
++<a name="l74"><span class="ln">74   </span></a>        });
++<a name="l75"><span class="ln">75   </span></a>    }
++<a name="l76"><span class="ln">76   </span></a>}</pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/MainActivity.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/MainActivity.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/MainActivity.java.html	(date 1621897167000)
+@@ -0,0 +1,63 @@
++<html>
++<head>
++<title>MainActivity.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #808080; font-style: italic;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++MainActivity.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l4"><span class="ln">4    </span></a>
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>android.content.Intent;
++<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>android.view.View;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>android.widget.Button;
++<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span>android.widget.TextView;
++<a name="l10"><span class="ln">10   </span></a>
++<a name="l11"><span class="ln">11   </span></a><span class="s0">public class </span>MainActivity <span class="s0">extends </span>AppCompatActivity {
++<a name="l12"><span class="ln">12   </span></a>
++<a name="l13"><span class="ln">13   </span></a>    <span class="s0">private </span>TextView tv_id, tv_pass;
++<a name="l14"><span class="ln">14   </span></a>
++<a name="l15"><span class="ln">15   </span></a>    <span class="s2">//버튼 선언</span>
++<a name="l16"><span class="ln">16   </span></a>    <span class="s0">private </span>Button btn_move;
++<a name="l17"><span class="ln">17   </span></a>
++<a name="l18"><span class="ln">18   </span></a>    @Override
++<a name="l19"><span class="ln">19   </span></a>    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState) {
++<a name="l20"><span class="ln">20   </span></a>        <span class="s0">super</span>.onCreate(savedInstanceState);
++<a name="l21"><span class="ln">21   </span></a>        setContentView(R.layout.activity_main);
++<a name="l22"><span class="ln">22   </span></a>
++<a name="l23"><span class="ln">23   </span></a>
++<a name="l24"><span class="ln">24   </span></a>        btn_move = findViewById(R.id.btn_move);
++<a name="l25"><span class="ln">25   </span></a>        btn_move.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
++<a name="l26"><span class="ln">26   </span></a>            @Override
++<a name="l27"><span class="ln">27   </span></a>            <span class="s0">public void </span>onClick(View v) {
++<a name="l28"><span class="ln">28   </span></a>                Intent intent = <span class="s0">new </span>Intent(MainActivity.<span class="s0">this </span>, <a href="SubActivity.java.html">SubActivity</a>.<span class="s0">class</span>);
++<a name="l29"><span class="ln">29   </span></a>                startActivity(intent); <span class="s2">//액티비티 이동</span>
++<a name="l30"><span class="ln">30   </span></a>            }
++<a name="l31"><span class="ln">31   </span></a>        });
++<a name="l32"><span class="ln">32   </span></a>
++<a name="l33"><span class="ln">33   </span></a>        tv_id = findViewById(R.id.tv_id);
++<a name="l34"><span class="ln">34   </span></a>        tv_pass = findViewById(R.id.tv_pass);
++<a name="l35"><span class="ln">35   </span></a>
++<a name="l36"><span class="ln">36   </span></a>        Intent intent = getIntent();
++<a name="l37"><span class="ln">37   </span></a>        String userID = intent.getStringExtra(<span class="s3">&quot;userID&quot;</span>);
++<a name="l38"><span class="ln">38   </span></a>        String userPass = intent.getStringExtra(<span class="s3">&quot;userPass&quot;</span>);
++<a name="l39"><span class="ln">39   </span></a>
++<a name="l40"><span class="ln">40   </span></a>        tv_id.setText(userID);
++<a name="l41"><span class="ln">41   </span></a>        tv_pass.setText(userPass);
++<a name="l42"><span class="ln">42   </span></a>    }
++<a name="l43"><span class="ln">43   </span></a>}</pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/LoginRequest.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/LoginRequest.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/LoginRequest.java.html	(date 1621897167000)
+@@ -0,0 +1,50 @@
++<html>
++<head>
++<title>LoginRequest.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #808080; font-style: italic;}
++.s3 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++LoginRequest.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>com.android.volley.AuthFailureError;
++<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span>com.android.volley.Response;
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>com.android.volley.toolbox.StringRequest;
++<a name="l6"><span class="ln">6    </span></a>
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>java.util.HashMap;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>java.util.Map;
++<a name="l9"><span class="ln">9    </span></a>
++<a name="l10"><span class="ln">10   </span></a><span class="s0">public class </span>LoginRequest <span class="s0">extends </span>StringRequest {
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a>    <span class="s2">//서버 URL 설정</span>
++<a name="l13"><span class="ln">13   </span></a>    <span class="s0">final static private </span>String URL = <span class="s3">&quot;http://sieun1025.dothome.co.kr/Login.php&quot;</span>;
++<a name="l14"><span class="ln">14   </span></a>    <span class="s0">private </span>Map&lt;String, String&gt; map;
++<a name="l15"><span class="ln">15   </span></a>
++<a name="l16"><span class="ln">16   </span></a>
++<a name="l17"><span class="ln">17   </span></a>    <span class="s0">public </span>LoginRequest(String userID, String userPassword, Response.Listener&lt;String&gt; listener) {
++<a name="l18"><span class="ln">18   </span></a>        <span class="s0">super</span>(Method.POST, URL, listener, <span class="s0">null</span>);
++<a name="l19"><span class="ln">19   </span></a>
++<a name="l20"><span class="ln">20   </span></a>        map = <span class="s0">new </span>HashMap&lt;&gt;();
++<a name="l21"><span class="ln">21   </span></a>        map.put(<span class="s3">&quot;userID&quot;</span>,userID);
++<a name="l22"><span class="ln">22   </span></a>        map.put(<span class="s3">&quot;userPassword&quot;</span>, userPassword);
++<a name="l23"><span class="ln">23   </span></a>    }
++<a name="l24"><span class="ln">24   </span></a>
++<a name="l25"><span class="ln">25   </span></a>    @Override
++<a name="l26"><span class="ln">26   </span></a>    <span class="s0">protected </span>Map&lt;String, String&gt; getParams() <span class="s0">throws </span>AuthFailureError {
++<a name="l27"><span class="ln">27   </span></a>        <span class="s0">return </span>map;
++<a name="l28"><span class="ln">28   </span></a>    }
++<a name="l29"><span class="ln">29   </span></a>}
++<a name="l30"><span class="ln">30   </span></a></pre>
++</body>
++</html>
+\ No newline at end of file
+Index: exportToHTML/com/example/registerlogin/CameraActivity.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/CameraActivity.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/CameraActivity.java.html	(date 1621897167000)
+@@ -0,0 +1,214 @@
++<html>
++<head>
++<title>CameraActivity.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.s2 { color: #0000ff;}
++.s3 { color: #808080; font-style: italic;}
++.s4 { color: #008000; font-weight: bold;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++CameraActivity.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>androidx.annotation.Nullable;
++<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span>androidx.core.content.FileProvider;
++<a name="l6"><span class="ln">6    </span></a>
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>android.Manifest;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>android.content.Intent;
++<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span>android.graphics.Bitmap;
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>android.graphics.BitmapFactory;
++<a name="l11"><span class="ln">11   </span></a><span class="s0">import </span>android.graphics.Matrix;
++<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span>android.media.ExifInterface;
++<a name="l13"><span class="ln">13   </span></a><span class="s0">import </span>android.net.Uri;
++<a name="l14"><span class="ln">14   </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l15"><span class="ln">15   </span></a><span class="s0">import </span>android.os.Environment;
++<a name="l16"><span class="ln">16   </span></a><span class="s0">import </span>android.provider.MediaStore;
++<a name="l17"><span class="ln">17   </span></a><span class="s0">import </span>android.view.View;
++<a name="l18"><span class="ln">18   </span></a><span class="s0">import </span>android.widget.ImageView;
++<a name="l19"><span class="ln">19   </span></a><span class="s0">import </span>android.widget.Toast;
++<a name="l20"><span class="ln">20   </span></a>
++<a name="l21"><span class="ln">21   </span></a><span class="s0">import </span>com.gun0912.tedpermission.PermissionListener;
++<a name="l22"><span class="ln">22   </span></a><span class="s0">import </span>com.gun0912.tedpermission.TedPermission;
++<a name="l23"><span class="ln">23   </span></a>
++<a name="l24"><span class="ln">24   </span></a><span class="s0">import </span>java.io.File;
++<a name="l25"><span class="ln">25   </span></a><span class="s0">import </span>java.io.FileNotFoundException;
++<a name="l26"><span class="ln">26   </span></a><span class="s0">import </span>java.io.FileOutputStream;
++<a name="l27"><span class="ln">27   </span></a><span class="s0">import </span>java.io.IOException;
++<a name="l28"><span class="ln">28   </span></a><span class="s0">import </span>java.text.SimpleDateFormat;
++<a name="l29"><span class="ln">29   </span></a><span class="s0">import </span>java.util.ArrayList;
++<a name="l30"><span class="ln">30   </span></a><span class="s0">import </span>java.util.Date;
++<a name="l31"><span class="ln">31   </span></a><span class="s0">import </span>java.util.Locale;
++<a name="l32"><span class="ln">32   </span></a>
++<a name="l33"><span class="ln">33   </span></a><span class="s0">import static </span>android.os.Environment.DIRECTORY_PICTURES;
++<a name="l34"><span class="ln">34   </span></a>
++<a name="l35"><span class="ln">35   </span></a><span class="s0">import </span>android.Manifest;
++<a name="l36"><span class="ln">36   </span></a><span class="s0">import </span>android.content.Intent;
++<a name="l37"><span class="ln">37   </span></a><span class="s0">import </span>android.graphics.Bitmap;
++<a name="l38"><span class="ln">38   </span></a><span class="s0">import </span>android.graphics.BitmapFactory;
++<a name="l39"><span class="ln">39   </span></a><span class="s0">import </span>android.graphics.Matrix;
++<a name="l40"><span class="ln">40   </span></a><span class="s0">import </span>android.media.ExifInterface;
++<a name="l41"><span class="ln">41   </span></a><span class="s0">import </span>android.media.MediaScannerConnection;
++<a name="l42"><span class="ln">42   </span></a><span class="s0">import </span>android.net.Uri;
++<a name="l43"><span class="ln">43   </span></a><span class="s0">import </span>android.os.Environment;
++<a name="l44"><span class="ln">44   </span></a><span class="s0">import </span>android.provider.MediaStore;
++<a name="l45"><span class="ln">45   </span></a><span class="s0">import </span>androidx.core.content.FileProvider;
++<a name="l46"><span class="ln">46   </span></a><span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
++<a name="l47"><span class="ln">47   </span></a><span class="s0">import </span>android.os.Bundle;
++<a name="l48"><span class="ln">48   </span></a><span class="s0">import </span>android.view.View;
++<a name="l49"><span class="ln">49   </span></a><span class="s0">import </span>android.widget.ImageView;
++<a name="l50"><span class="ln">50   </span></a><span class="s0">import </span>android.widget.Toast;
++<a name="l51"><span class="ln">51   </span></a>
++<a name="l52"><span class="ln">52   </span></a><span class="s0">import </span>com.gun0912.tedpermission.PermissionListener;
++<a name="l53"><span class="ln">53   </span></a><span class="s0">import </span>com.gun0912.tedpermission.TedPermission;
++<a name="l54"><span class="ln">54   </span></a>
++<a name="l55"><span class="ln">55   </span></a><span class="s0">import </span>java.io.File;
++<a name="l56"><span class="ln">56   </span></a><span class="s0">import </span>java.io.FileNotFoundException;
++<a name="l57"><span class="ln">57   </span></a><span class="s0">import </span>java.io.FileOutputStream;
++<a name="l58"><span class="ln">58   </span></a><span class="s0">import </span>java.io.IOException;
++<a name="l59"><span class="ln">59   </span></a><span class="s0">import </span>java.text.SimpleDateFormat;
++<a name="l60"><span class="ln">60   </span></a><span class="s0">import </span>java.util.ArrayList;
++<a name="l61"><span class="ln">61   </span></a><span class="s0">import </span>java.util.Date;
++<a name="l62"><span class="ln">62   </span></a><span class="s0">import </span>java.util.Locale;
++<a name="l63"><span class="ln">63   </span></a>
++<a name="l64"><span class="ln">64   </span></a><span class="s0">import static </span>android.os.Environment.DIRECTORY_PICTURES;
++<a name="l65"><span class="ln">65   </span></a>
++<a name="l66"><span class="ln">66   </span></a><span class="s0">public class </span>CameraActivity <span class="s0">extends </span>AppCompatActivity {
++<a name="l67"><span class="ln">67   </span></a>
++<a name="l68"><span class="ln">68   </span></a>    <span class="s0">private static final int </span>REQUEST_IMAGE_CAPTURE = <span class="s2">672</span>;
++<a name="l69"><span class="ln">69   </span></a>    <span class="s0">private </span>String imageFilePath;
++<a name="l70"><span class="ln">70   </span></a>    <span class="s0">private </span>Uri photoUri;
++<a name="l71"><span class="ln">71   </span></a>
++<a name="l72"><span class="ln">72   </span></a>    @Override
++<a name="l73"><span class="ln">73   </span></a>    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState) {
++<a name="l74"><span class="ln">74   </span></a>        <span class="s0">super</span>.onCreate(savedInstanceState);
++<a name="l75"><span class="ln">75   </span></a>        setContentView(R.layout.activity_main);
++<a name="l76"><span class="ln">76   </span></a>
++<a name="l77"><span class="ln">77   </span></a>
++<a name="l78"><span class="ln">78   </span></a>        <span class="s3">// 권한 체크</span>
++<a name="l79"><span class="ln">79   </span></a>        TedPermission.with(getApplicationContext())
++<a name="l80"><span class="ln">80   </span></a>                .setPermissionListener(permissionListener)
++<a name="l81"><span class="ln">81   </span></a>                .setRationaleMessage(<span class="s4">&quot;카메라 권한이 필요합니다.&quot;</span>)
++<a name="l82"><span class="ln">82   </span></a>                .setDeniedMessage(<span class="s4">&quot;거부하셨습니다.&quot;</span>)
++<a name="l83"><span class="ln">83   </span></a>                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
++<a name="l84"><span class="ln">84   </span></a>                .check();
++<a name="l85"><span class="ln">85   </span></a>
++<a name="l86"><span class="ln">86   </span></a>
++<a name="l87"><span class="ln">87   </span></a>        findViewById(R.id.btn_capture).setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
++<a name="l88"><span class="ln">88   </span></a>            @Override
++<a name="l89"><span class="ln">89   </span></a>            <span class="s0">public void </span>onClick(View v) {
++<a name="l90"><span class="ln">90   </span></a>                Intent intent = <span class="s0">new </span>Intent(MediaStore.ACTION_IMAGE_CAPTURE);
++<a name="l91"><span class="ln">91   </span></a>                <span class="s0">if </span>(intent.resolveActivity(getPackageManager()) != <span class="s0">null</span>) {
++<a name="l92"><span class="ln">92   </span></a>                    File photoFile = <span class="s0">null</span>;
++<a name="l93"><span class="ln">93   </span></a>                    <span class="s0">try </span>{
++<a name="l94"><span class="ln">94   </span></a>                        photoFile = createImageFile();
++<a name="l95"><span class="ln">95   </span></a>                    } <span class="s0">catch </span>(IOException e) {
++<a name="l96"><span class="ln">96   </span></a>
++<a name="l97"><span class="ln">97   </span></a>                    }
++<a name="l98"><span class="ln">98   </span></a>
++<a name="l99"><span class="ln">99   </span></a>                    <span class="s0">if </span>(photoFile != <span class="s0">null</span>) {
++<a name="l100"><span class="ln">100  </span></a>                        photoUri = FileProvider.getUriForFile(getApplicationContext(), getPackageName(), photoFile);
++<a name="l101"><span class="ln">101  </span></a>                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
++<a name="l102"><span class="ln">102  </span></a>                        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
++<a name="l103"><span class="ln">103  </span></a>                    }
++<a name="l104"><span class="ln">104  </span></a>                }
++<a name="l105"><span class="ln">105  </span></a>            }
++<a name="l106"><span class="ln">106  </span></a>        });
++<a name="l107"><span class="ln">107  </span></a>
++<a name="l108"><span class="ln">108  </span></a>
++<a name="l109"><span class="ln">109  </span></a>    }
++<a name="l110"><span class="ln">110  </span></a>
++<a name="l111"><span class="ln">111  </span></a>    <span class="s0">private </span>File createImageFile() <span class="s0">throws </span>IOException {
++<a name="l112"><span class="ln">112  </span></a>        String timeStamp = <span class="s0">new </span>SimpleDateFormat(<span class="s4">&quot;yyyyMMdd_HHmmss&quot;</span>).format(<span class="s0">new </span>Date());
++<a name="l113"><span class="ln">113  </span></a>        String imageFileName = <span class="s4">&quot;TEST_&quot; </span>+ timeStamp + <span class="s4">&quot;_&quot;</span>;
++<a name="l114"><span class="ln">114  </span></a>        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
++<a name="l115"><span class="ln">115  </span></a>        File image = File.createTempFile(
++<a name="l116"><span class="ln">116  </span></a>                imageFileName,
++<a name="l117"><span class="ln">117  </span></a>                <span class="s4">&quot;.jpg&quot;</span>,
++<a name="l118"><span class="ln">118  </span></a>                storageDir
++<a name="l119"><span class="ln">119  </span></a>        );
++<a name="l120"><span class="ln">120  </span></a>        imageFilePath = image.getAbsolutePath();
++<a name="l121"><span class="ln">121  </span></a>        <span class="s0">return </span>image;
++<a name="l122"><span class="ln">122  </span></a>    }
++<a name="l123"><span class="ln">123  </span></a>
++<a name="l124"><span class="ln">124  </span></a>
++<a name="l125"><span class="ln">125  </span></a>
++<a name="l126"><span class="ln">126  </span></a>    @Override
++<a name="l127"><span class="ln">127  </span></a>    <span class="s0">protected void </span>onActivityResult(<span class="s0">int </span>requestCode, <span class="s0">int </span>resultCode, Intent data) {
++<a name="l128"><span class="ln">128  </span></a>        <span class="s0">if </span>(requestCode == REQUEST_IMAGE_CAPTURE &amp;&amp; resultCode == RESULT_OK) {
++<a name="l129"><span class="ln">129  </span></a>            Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
++<a name="l130"><span class="ln">130  </span></a>            ExifInterface exif = <span class="s0">null</span>;
++<a name="l131"><span class="ln">131  </span></a>
++<a name="l132"><span class="ln">132  </span></a>            <span class="s0">try </span>{
++<a name="l133"><span class="ln">133  </span></a>                exif = <span class="s0">new </span>ExifInterface(imageFilePath);
++<a name="l134"><span class="ln">134  </span></a>            } <span class="s0">catch </span>(IOException e) {
++<a name="l135"><span class="ln">135  </span></a>                e.printStackTrace();
++<a name="l136"><span class="ln">136  </span></a>            }
++<a name="l137"><span class="ln">137  </span></a>
++<a name="l138"><span class="ln">138  </span></a>            <span class="s0">int </span>exifOrientation;
++<a name="l139"><span class="ln">139  </span></a>            <span class="s0">int </span>exifDegree;
++<a name="l140"><span class="ln">140  </span></a>
++<a name="l141"><span class="ln">141  </span></a>            <span class="s0">if </span>(exif != <span class="s0">null</span>) {
++<a name="l142"><span class="ln">142  </span></a>                exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
++<a name="l143"><span class="ln">143  </span></a>                exifDegree = exifOrientationToDegress(exifOrientation);
++<a name="l144"><span class="ln">144  </span></a>            } <span class="s0">else </span>{
++<a name="l145"><span class="ln">145  </span></a>                exifDegree = <span class="s2">0</span>;
++<a name="l146"><span class="ln">146  </span></a>            }
++<a name="l147"><span class="ln">147  </span></a>
++<a name="l148"><span class="ln">148  </span></a>
++<a name="l149"><span class="ln">149  </span></a>            <span class="s3">// 이미지 뷰에 비트맵을 set하여 이미지 표현</span>
++<a name="l150"><span class="ln">150  </span></a>            ((ImageView) findViewById(R.id.iv_result)).setImageBitmap(rotate(bitmap, exifDegree));
++<a name="l151"><span class="ln">151  </span></a>
++<a name="l152"><span class="ln">152  </span></a>
++<a name="l153"><span class="ln">153  </span></a>        }
++<a name="l154"><span class="ln">154  </span></a>    }
++<a name="l155"><span class="ln">155  </span></a>
++<a name="l156"><span class="ln">156  </span></a>    <span class="s0">private int </span>exifOrientationToDegress(<span class="s0">int </span>exifOrientation) {
++<a name="l157"><span class="ln">157  </span></a>        <span class="s0">if </span>(exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
++<a name="l158"><span class="ln">158  </span></a>            <span class="s0">return </span><span class="s2">90</span>;
++<a name="l159"><span class="ln">159  </span></a>        } <span class="s0">else if </span>(exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
++<a name="l160"><span class="ln">160  </span></a>            <span class="s0">return </span><span class="s2">180</span>;
++<a name="l161"><span class="ln">161  </span></a>        } <span class="s0">else if </span>(exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
++<a name="l162"><span class="ln">162  </span></a>            <span class="s0">return </span><span class="s2">270</span>;
++<a name="l163"><span class="ln">163  </span></a>        }
++<a name="l164"><span class="ln">164  </span></a>        <span class="s0">return </span><span class="s2">0</span>;
++<a name="l165"><span class="ln">165  </span></a>    }
++<a name="l166"><span class="ln">166  </span></a>
++<a name="l167"><span class="ln">167  </span></a>    <span class="s0">private </span>Bitmap rotate(Bitmap bitmap, <span class="s0">float </span>degree) {
++<a name="l168"><span class="ln">168  </span></a>        Matrix matrix = <span class="s0">new </span>Matrix();
++<a name="l169"><span class="ln">169  </span></a>        matrix.postRotate(degree);
++<a name="l170"><span class="ln">170  </span></a>        <span class="s0">return </span>Bitmap.createBitmap(bitmap, <span class="s2">0</span>, <span class="s2">0</span>, bitmap.getWidth(), bitmap.getHeight(), matrix, <span class="s0">true</span>);
++<a name="l171"><span class="ln">171  </span></a>    }
++<a name="l172"><span class="ln">172  </span></a>
++<a name="l173"><span class="ln">173  </span></a>
++<a name="l174"><span class="ln">174  </span></a>
++<a name="l175"><span class="ln">175  </span></a>    PermissionListener permissionListener = <span class="s0">new </span>PermissionListener() {
++<a name="l176"><span class="ln">176  </span></a>        @Override
++<a name="l177"><span class="ln">177  </span></a>        <span class="s0">public void </span>onPermissionGranted() {
++<a name="l178"><span class="ln">178  </span></a>            Toast.makeText(getApplicationContext(), <span class="s4">&quot;권한이 허용됨&quot;</span>,Toast.LENGTH_SHORT).show();
++<a name="l179"><span class="ln">179  </span></a>        }
++<a name="l180"><span class="ln">180  </span></a>
++<a name="l181"><span class="ln">181  </span></a>        @Override
++<a name="l182"><span class="ln">182  </span></a>        <span class="s0">public void </span>onPermissionDenied(ArrayList&lt;String&gt; deniedPermissions) {
++<a name="l183"><span class="ln">183  </span></a>            Toast.makeText(getApplicationContext(), <span class="s4">&quot;권한이 거부됨&quot;</span>,Toast.LENGTH_SHORT).show();
++<a name="l184"><span class="ln">184  </span></a>        }
++<a name="l185"><span class="ln">185  </span></a>    };
++<a name="l186"><span class="ln">186  </span></a>
++<a name="l187"><span class="ln">187  </span></a>
++<a name="l188"><span class="ln">188  </span></a>}
++<a name="l189"><span class="ln">189  </span></a>
++<a name="l190"><span class="ln">190  </span></a>
++<a name="l191"><span class="ln">191  </span></a>
++<a name="l192"><span class="ln">192  </span></a>
++<a name="l193"><span class="ln">193  </span></a></pre>
++</body>
++</html>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_sub.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_sub.xml	(revision bb21f4971f1c499c3788d692822cedc6d6b003c6)
++++ app/src/main/res/layout/activity_sub.xml	(date 1621887853000)
+@@ -66,6 +66,20 @@
+ 
+     </androidx.gridlayout.widget.GridLayout>
+ 
++    <Button
++        android:id="@+id/btn_move3"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:onClick="buttonCLick"
++        android:text="오늘의 사진 찍기"
++        app:backgroundTint="@color/btncolor"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.498"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/gridLayout3"
++        app:layout_constraintVertical_bias="0.733" />
++
+     <Button
+         android:id="@+id/btn_move2"
+         android:layout_width="wrap_content"
+Index: app/src/main/java/com/example/registerlogin/SubActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/registerlogin/SubActivity.java	(revision bb21f4971f1c499c3788d692822cedc6d6b003c6)
++++ app/src/main/java/com/example/registerlogin/SubActivity.java	(date 1621893776000)
+@@ -15,11 +15,23 @@
+ 
+     //버튼 선언
+     private Button btn_move2;
++    private Button btn_move3;
++
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_sub);
++
++        btn_move3 = findViewById(R.id.btn_move3);
++        btn_move3.setOnClickListener((new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                Intent intent = new Intent(SubActivity.this, CameraActivity.class);
++                startActivity(intent);
++            }
++        }));
++
+         btn_move2 = findViewById(R.id.btn_move2);
+         btn_move2.setOnClickListener(new View.OnClickListener() {
+             @Override
+@@ -27,6 +39,7 @@
+                 Intent intent = new Intent(SubActivity.this , CalendarActivity.class);
+                 startActivity(intent); //액티비티 이동
+             }
++
+         });
+ 
+     }
+Index: app/src/main/res/layout/activity_camera.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_camera.xml	(date 1621896884000)
++++ app/src/main/res/layout/activity_camera.xml	(date 1621896884000)
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context=".CameraActivity">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_weight="1">
++
++        <ImageView
++            android:id="@+id/iv_result"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent" />
++
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:gravity="center"
++        android:orientation="horizontal">
++
++        <Button
++            android:id="@+id/btn_capture"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="촬영" />
++
++    </LinearLayout>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision bb21f4971f1c499c3788d692822cedc6d6b003c6)
++++ app/build.gradle	(date 1621888203000)
+@@ -35,6 +35,7 @@
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+     implementation 'com.android.volley:volley:1.1.1'
+     implementation 'androidx.gridlayout:gridlayout:1.0.0'
++    implementation 'gun0912.ted:tedpermission:2.0.0'
+     testImplementation 'junit:junit:4.+'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+Index: app/src/main/java/com/example/registerlogin/CameraActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/registerlogin/CameraActivity.java	(date 1621897750000)
++++ app/src/main/java/com/example/registerlogin/CameraActivity.java	(date 1621897750000)
+@@ -0,0 +1,192 @@
++package com.example.registerlogin;
++
++import androidx.annotation.Nullable;
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.core.content.FileProvider;
++
++import android.Manifest;
++import android.content.Intent;
++import android.graphics.Bitmap;
++import android.graphics.BitmapFactory;
++import android.graphics.Matrix;
++import android.media.ExifInterface;
++import android.net.Uri;
++import android.os.Bundle;
++import android.os.Environment;
++import android.provider.MediaStore;
++import android.view.View;
++import android.widget.ImageView;
++import android.widget.Toast;
++
++import com.gun0912.tedpermission.PermissionListener;
++import com.gun0912.tedpermission.TedPermission;
++
++import java.io.File;
++import java.io.FileNotFoundException;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.text.SimpleDateFormat;
++import java.util.ArrayList;
++import java.util.Date;
++import java.util.Locale;
++
++import static android.os.Environment.DIRECTORY_PICTURES;
++
++import android.Manifest;
++import android.content.Intent;
++import android.graphics.Bitmap;
++import android.graphics.BitmapFactory;
++import android.graphics.Matrix;
++import android.media.ExifInterface;
++import android.media.MediaScannerConnection;
++import android.net.Uri;
++import android.os.Environment;
++import android.provider.MediaStore;
++import androidx.core.content.FileProvider;
++import androidx.appcompat.app.AppCompatActivity;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.ImageView;
++import android.widget.Toast;
++
++import com.gun0912.tedpermission.PermissionListener;
++import com.gun0912.tedpermission.TedPermission;
++
++import java.io.File;
++import java.io.FileNotFoundException;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.text.SimpleDateFormat;
++import java.util.ArrayList;
++import java.util.Date;
++import java.util.Locale;
++
++import static android.os.Environment.DIRECTORY_PICTURES;
++
++public class CameraActivity extends AppCompatActivity {
++
++    private static final int REQUEST_IMAGE_CAPTURE = 672;
++    private String imageFilePath;
++    private Uri photoUri;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++
++
++        // 권한 체크
++        TedPermission.with(getApplicationContext())
++                .setPermissionListener(permissionListener)
++                .setRationaleMessage("카메라 권한이 필요합니다.")
++                .setDeniedMessage("거부하셨습니다.")
++                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
++                .check();
++
++
++        findViewById(R.id.btn_capture).setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
++                if (intent.resolveActivity(getPackageManager()) != null) {
++                    File photoFile = null;
++                    try {
++                        photoFile = createImageFile();
++                    } catch (IOException e) {
++
++                    }
++
++                    if (photoFile != null) {
++                        photoUri = FileProvider.getUriForFile(getApplicationContext(), getPackageName(), photoFile);
++                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
++                        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
++                    }
++                }
++            }
++        });
++
++
++    }
++
++    private File createImageFile() throws IOException {
++        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
++        String imageFileName = "TEST_" + timeStamp + "_";
++        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
++        File image = File.createTempFile(
++                imageFileName,
++                ".jpg",
++                storageDir
++        );
++        imageFilePath = image.getAbsolutePath();
++        return image;
++    }
++
++
++
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
++        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
++            Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
++            ExifInterface exif = null;
++
++            try {
++                exif = new ExifInterface(imageFilePath);
++            } catch (IOException e) {
++                e.printStackTrace();
++            }
++
++            int exifOrientation;
++            int exifDegree;
++
++            if (exif != null) {
++                exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
++                exifDegree = exifOrientationToDegress(exifOrientation);
++            } else {
++                exifDegree = 0;
++            }
++
++
++            // 이미지 뷰에 비트맵을 set하여 이미지 표현
++            ((ImageView) findViewById(R.id.iv_result)).setImageBitmap(rotate(bitmap, exifDegree));
++
++
++        }
++    }
++
++    private int exifOrientationToDegress(int exifOrientation) {
++        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
++            return 90;
++        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
++            return 180;
++        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
++            return 270;
++        }
++        return 0;
++    }
++
++    private Bitmap rotate(Bitmap bitmap, float degree) {
++        Matrix matrix = new Matrix();
++        matrix.postRotate(degree);
++        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
++    }
++
++
++
++    PermissionListener permissionListener = new PermissionListener() {
++        @Override
++        public void onPermissionGranted() {
++            Toast.makeText(getApplicationContext(), "권한이 허용됨",Toast.LENGTH_SHORT).show();
++        }
++
++        @Override
++        public void onPermissionDenied(ArrayList<String> deniedPermissions) {
++            Toast.makeText(getApplicationContext(), "권한이 거부됨",Toast.LENGTH_SHORT).show();
++        }
++    };
++
++
++}
++
++
++
++
+Index: exportToHTML/com/example/registerlogin/CalendarViewHolder.java.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- exportToHTML/com/example/registerlogin/CalendarViewHolder.java.html	(date 1621897167000)
++++ exportToHTML/com/example/registerlogin/CalendarViewHolder.java.html	(date 1621897167000)
+@@ -0,0 +1,49 @@
++<html>
++<head>
++<title>CalendarViewHolder.java</title>
++<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
++<style type="text/css">
++.s0 { color: #000080; font-weight: bold;}
++.s1 { color: #000000;}
++.ln { color: #999999; font-weight: normal; font-style: normal; }
++</style>
++</head>
++<body bgcolor="#ffffff">
++<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
++<tr><td><center>
++<font face="Arial, Helvetica" color="#000000">
++CalendarViewHolder.java</font>
++</center></td></tr></table>
++<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span>com.example.registerlogin;
++<a name="l2"><span class="ln">2    </span></a>
++<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span>android.view.View;
++<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span>android.widget.TextView;
++<a name="l5"><span class="ln">5    </span></a>
++<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span>androidx.annotation.NonNull;
++<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span>androidx.appcompat.view.menu.MenuView;
++<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span>androidx.recyclerview.widget.RecyclerView;
++<a name="l9"><span class="ln">9    </span></a>
++<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span>com.example.registerlogin.R;
++<a name="l11"><span class="ln">11   </span></a>
++<a name="l12"><span class="ln">12   </span></a><span class="s0">public class </span>CalendarViewHolder <span class="s0">extends </span>RecyclerView.ViewHolder <span class="s0">implements </span>View.OnClickListener
++<a name="l13"><span class="ln">13   </span></a>{
++<a name="l14"><span class="ln">14   </span></a>    <span class="s0">public final </span>TextView dayOfMonth;
++<a name="l15"><span class="ln">15   </span></a>    <span class="s0">private final <a href="CalendarAdapter.java.html">com.example.registerlogin.CalendarAdapter.OnItemListener</a> </span>onItemListener;
++<a name="l16"><span class="ln">16   </span></a>    <span class="s0">public </span>CalendarViewHolder(@NonNull View itemView, <a href="CalendarAdapter.java.html">com.example.registerlogin.CalendarAdapter.OnItemListener</a> onItemListener)
++<a name="l17"><span class="ln">17   </span></a>    {
++<a name="l18"><span class="ln">18   </span></a>        <span class="s0">super</span>(itemView);
++<a name="l19"><span class="ln">19   </span></a>        dayOfMonth = itemView.findViewById(R.id.cellDayText);
++<a name="l20"><span class="ln">20   </span></a>        <span class="s0">this</span>.onItemListener = onItemListener;
++<a name="l21"><span class="ln">21   </span></a>        itemView.setOnClickListener(<span class="s0">this</span>);
++<a name="l22"><span class="ln">22   </span></a>    }
++<a name="l23"><span class="ln">23   </span></a>
++<a name="l24"><span class="ln">24   </span></a>    @Override
++<a name="l25"><span class="ln">25   </span></a>    <span class="s0">public void </span>onClick(View v)
++<a name="l26"><span class="ln">26   </span></a>    {
++<a name="l27"><span class="ln">27   </span></a>        onItemListener.onItemClick(getAdapterPosition(), (String) dayOfMonth.getText());
++<a name="l28"><span class="ln">28   </span></a>    }
++<a name="l29"><span class="ln">29   </span></a>}
++<a name="l30"><span class="ln">30   </span></a>
++<a name="l31"><span class="ln">31   </span></a></pre>
++</body>
++</html>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision bb21f4971f1c499c3788d692822cedc6d6b003c6)
++++ app/src/main/AndroidManifest.xml	(date 1621890297000)
+@@ -4,6 +4,8 @@
+     package="com.example.registerlogin">
+ 
+     <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
++    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+ 
+     <application
+         android:allowBackup="true"
+@@ -13,7 +15,9 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.RegisterLogin"
+         android:usesCleartextTraffic="true">
+-        <activity android:name=".CalendarAdapter"
++        <activity android:name=".CameraActivity"></activity>
++        <activity
++            android:name=".CalendarAdapter"
+             tools:ignore="Instantiatable" />
+         <activity android:name=".CalendarActivity" />
+         <activity android:name=".SubActivity" />
+@@ -26,6 +30,19 @@
+         </activity>
+         <activity android:name=".RegisterActivity" />
+         <activity android:name=".MainActivity" />
++
++        <provider
++            android:authorities="com.example.registerlogin"
++            android:name="androidx.core.content.FileProvider"
++            android:exported="false"
++            android:grantUriPermissions="true">
++
++            <meta-data
++                android:name="android.support.FILE_PROVIDER_PATHS"
++                android:resource="@xml/file_paths" />
++
++        </provider>
++
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/xml/file_paths.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/xml/file_paths.xml	(date 1621895439000)
++++ app/src/main/res/xml/file_paths.xml	(date 1621895439000)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<paths xmlns:android="http://schemas.android.com/apk/res/android">
++
++    <external-path
++        name="my_images"
++        path="Android/data/com.example.registerlogin/files/Pictures"/>  <!--  Environment.getExternalStorageDirectory() 외부 저장소-->
++
++
++</paths>
+\ No newline at end of file

@@ -15,11 +15,23 @@ public class SubActivity extends AppCompatActivity {
 
     //버튼 선언
     private Button btn_move2;
+    private Button btn_move3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
+
+        btn_move3 = findViewById(R.id.btn_move3);
+        btn_move3.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SubActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        }));
+
         btn_move2 = findViewById(R.id.btn_move2);
         btn_move2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +39,7 @@ public class SubActivity extends AppCompatActivity {
                 Intent intent = new Intent(SubActivity.this , CalendarActivity.class);
                 startActivity(intent); //액티비티 이동
             }
+
         });
 
     }
