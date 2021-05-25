@@ -64,15 +64,20 @@ import java.util.Locale;
 import static android.os.Environment.DIRECTORY_PICTURES;
 
 public class CameraActivity extends AppCompatActivity {
-
     private static final int REQUEST_IMAGE_CAPTURE = 672;
     private String imageFilePath;
     private Uri photoUri;
+
+    private MediaScanner mMediaScanner; // 사진 저장 시 갤러리 폴더에 바로 반영사항을 업데이트 시켜주려면 이 것이 필요하다(미디어 스캐닝)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // 사진 저장 후 미디어 스캐닝을 돌려줘야 갤러리에 반영됨.
+        mMediaScanner = MediaScanner.getInstance(getApplicationContext());
 
 
         // 권한 체크
@@ -122,7 +127,6 @@ public class CameraActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
@@ -145,9 +149,46 @@ public class CameraActivity extends AppCompatActivity {
                 exifDegree = 0;
             }
 
+            String result = "";
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HHmmss", Locale.getDefault() );
+            Date             curDate   = new Date(System.currentTimeMillis());
+            String           filename  = formatter.format(curDate);
+
+            String           strFolderName = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES) + File.separator + "HONGDROID" + File.separator;
+            File file = new File(strFolderName);
+            if( !file.exists() )
+                file.mkdirs();
+
+            File f = new File(strFolderName + "/" + filename + ".png");
+            result = f.getPath();
+
+            FileOutputStream fOut = null;
+            try {
+                fOut = new FileOutputStream(f);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                result = "Save Error fOut";
+            }
+
+            // 비트맵 사진 폴더 경로에 저장
+            rotate(bitmap,exifDegree).compress(Bitmap.CompressFormat.PNG, 70, fOut);
+
+            try {
+                fOut.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                fOut.close();
+                // 방금 저장된 사진을 갤러리 폴더 반영 및 최신화
+                mMediaScanner.mediaScanning(strFolderName + "/" + filename + ".png");
+            } catch (IOException e) {
+                e.printStackTrace();
+                result = "File close Error";
+            }
 
             // 이미지 뷰에 비트맵을 set하여 이미지 표현
-            ((ImageView) findViewById(R.id.iv_result)).setImageBitmap(rotate(bitmap, exifDegree));
+            ((ImageView) findViewById(R.id.iv_result)).setImageBitmap(rotate(bitmap,exifDegree));
 
 
         }
@@ -170,8 +211,6 @@ public class CameraActivity extends AppCompatActivity {
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
 
-
-
     PermissionListener permissionListener = new PermissionListener() {
         @Override
         public void onPermissionGranted() {
@@ -185,8 +224,7 @@ public class CameraActivity extends AppCompatActivity {
     };
 
 
+
+
 }
-
-
-
 
